@@ -7,7 +7,7 @@ import TakeExample from '../components/take-examples/take-examples.component';
 
 const Home = () => {
 
-    const [displayOrderSearch, setDisplayOrderSearch] = useState(false);
+    const [displayOrderSearch, setDisplayOrderSearch] = useState(true);
     const [displayTakeSample, setDisplayTakeSample] = useState(false);
 
     const displayOrderSearchComponent = () => {
@@ -22,25 +22,15 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div className="details">
-            <center>
-                <h1>Redux-Saga Snippets</h1>
-                <p></p>
-                <p>A small collection of redux-saga sample implementations.</p>
-                <p>The repistory for this app can be found on <a href="https://github.com/tanyamiranda/redux-saga">Github</a></p>
-            </center>
-            </div>
+            <div className="page-title"><h1>Redux-Saga Snippets</h1></div>
             <div className="component-list">
-                <div className="component-selection" onClick={displayOrderSearchComponent}>
+                <div className={'component-selection ' + (displayOrderSearch ? 'selected' : '') } onClick={displayOrderSearchComponent}>
                     <div className="title" >Order Search</div>
-                    <div className="details">A simple implementation of a few redux-saga actions.</div>
                 </div>
-                <div className="component-selection" onClick={displayTakeSampleComponent}>
+                <div className={'component-selection ' + (displayTakeSample ? 'selected' : '') } onClick={displayTakeSampleComponent}>
                     <div className="title" >Take/TakeEvery/TakeLatest</div>
-                    <div className="details">An explanation of these redux-saga functions.</div>
                 </div>
             </div>        
-            <br/>
             <hr/>
             <div className="component-page">
                 {!displayOrderSearch ? null : (

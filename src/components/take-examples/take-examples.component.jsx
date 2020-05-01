@@ -11,12 +11,11 @@ const TakeExample = ({ incrementTake, incrementTakeEvery, incrementTakeLatest, i
     <div> 
        
       <div className="details">
-        <h1><center>Difference between take(), takeEvery(), takeLatest()</center></h1>
-        <p></p>
+        <h2><center>Difference between take(), takeEvery(), takeLatest()</center></h2>
         <p>The take(), takeEvery(), takeLatest() calls have been placed within their own separate generators and can be executed from the buttons below. </p>
         <p>Each Saga generator will call the incrementFromSaga() function. The incrementFromSaga() function delays for 3 seconds and then dispatches the INCREMENT_FROM_SAGA action. The delay is added to demonstrate the control redux-saga has over the order of function calls.</p>
         <p>The INCREMENT_FROM_SAGA action simply increments the value by 1.</p>
-        <p>Open the Javascript Console to see log output.</p>
+        <p>The take(), takeEvery(), takeLatest() calls have been placed within their own separate generators and can be executed from the buttons below. </p>
       </div>
       <div className="component-wide">
         <center>
@@ -57,9 +56,9 @@ const TakeExample = ({ incrementTake, incrementTakeEvery, incrementTakeLatest, i
               <button onClick={() => incrementTakeLatest(value)}>Add 1 (takeLatest) </button>
             </div>  
             <div className="description">You will see three instance of "incrementFromSaga() started." in the log for each call. Since all subsequent call completed before incrementFromSaga() finished, you will only see one dispatch of INCREMENT_FROM_SAGA in the log. The value will be incremented from the latest value, and only once.</div>
-            
           </div>
         </div>
+        
       </div>
   );
 }

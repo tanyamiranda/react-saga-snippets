@@ -31,15 +31,7 @@ const OrderSearch = ({currentUser, orderHistory, fetchUserOrdersStart, signInUse
 
     return (
         <div>
-            <div className="details">
-                <h1><center>A Simple New Action Implementation</center></h1>
-                <p></p>
-                <p>This is a simple implementation of a redux-saga action - the order search. In this app, when a user signs in, redux-saga will automatically fetch the user's orders. When a user signs out, those orders disappear.</p>
-                <p>The same order search feature is made available independently, as in searching for orders by email. You can see the different action calls in the console upon user login and order search.</p>
-                <p>This app focuses solely on the redux-saga code and configuration. The database and authentication setup is irrelevant here. For this app, order data is stored in a file, and the SIGN_IN action provides a currentUser object that would be similar to a real application. For this app, the currentUser object is just an email address.</p>
-                <p>To see an explanation of this implementation, visit this <a href="https://catscoding.blogspot.com/2020/04/create-new-redux-saga-action.html">blog post</a>.</p>
-                <p>Open the Javascript Console to see log output.</p>
-            </div>
+            <div className="details"><h2><center>A Simple Order Search Implementation</center></h2></div>
             <div className="component-list-three">
                 <div className="component">
                     <div className="title">Sign In User</div>
@@ -55,6 +47,13 @@ const OrderSearch = ({currentUser, orderHistory, fetchUserOrdersStart, signInUse
                     </div>
                     <div className="buttons">
                         <button onClick={() => handleSignIn()}>Sign In User</button>
+                    </div>
+                </div>
+                <div className="component">
+                    <div className="title">Sign Out User</div>
+                    <div className="description">Will only execute if a user was already signed in.</div>
+                    <div className="buttons">
+                        <button onClick={() => handleSignOut()}>Sign Out User </button>
                     </div>
                 </div>
                 <div className="component">
@@ -74,13 +73,7 @@ const OrderSearch = ({currentUser, orderHistory, fetchUserOrdersStart, signInUse
                         
                     </div>
                 </div>
-                <div className="component">
-                    <div className="title">Sign Out User</div>
-                    <div className="description">Will only execute if a user was already signed in.</div>
-                    <div className="buttons">
-                        <button onClick={() => handleSignOut()}>Sign Out User </button>
-                    </div>
-                </div>
+                
             </div>
 
             <div className="component-wide">
@@ -97,7 +90,12 @@ const OrderSearch = ({currentUser, orderHistory, fetchUserOrdersStart, signInUse
                     
                 }
             </div>
-            <br/>
+            <br/>            
+                <p>This is a simple implementation of a redux-saga action - the order search. In this app, when a user signs in, redux-saga will automatically fetch the user's orders. When a user signs out, those orders disappear.</p>
+                <p>The same order search feature is made available independently, as in searching for orders by email. You can see the different action calls in the console upon user login and order search.</p>
+                <p>This app focuses solely on the redux-saga code and configuration. The database and authentication setup is irrelevant here. For this app, order data is stored in a file, and the SIGN_IN action provides a currentUser object that would be similar to a real application. For this app, the currentUser object is just an email address.</p>
+                <p>To see an explanation of this implementation, visit this <a href="https://catscoding.blogspot.com/2020/04/create-new-redux-saga-action.html">blog post</a>.</p>
+                <p>Open the Javascript Console to see log output.</p>
         </div>
     )
 
